@@ -44,6 +44,7 @@ public class XOVentana extends javax.swing.JFrame {
         if (contador > 4) {
             if (arrayXO[0][0].getText().equals("x") && arrayXO[0][1].getText().equals("x") && arrayXO[0][2].getText().equals("x")) {
                 ganador = "X";
+                
                 return true;
             } else if (arrayXO[0][0].getText().equals("o") && arrayXO[0][1].getText().equals("x") && arrayXO[0][2].getText().equals("o")) {
                 ganador = "O";
@@ -132,7 +133,7 @@ public class XOVentana extends javax.swing.JFrame {
 
         Titulo.setText("XO da Dinero");
 
-        jLabel2.setText(Inicio.devolverJugador1()+" vs "+Inicio.devolverJugador2());
+        jLabel2.setText(Jugadores.devolverJugador1()+" vs "+Jugadores.devolverJugador2());
 
         jLabel3.setText("Fila:");
 
@@ -333,6 +334,8 @@ public class XOVentana extends javax.swing.JFrame {
                 String nombre = (ganador.equals("X")) ? jugador1 : jugador2;
                 if (verificacionGanador()) {
                     JOptionPane.showMessageDialog(null, "Gano " + nombre + "!", "Ganador", JOptionPane.INFORMATION_MESSAGE);
+                    menuJuego mj=new menuJuego();
+                    mj.setVisible(true);
                     this.dispose();
                 }
             }
@@ -350,9 +353,9 @@ public class XOVentana extends javax.swing.JFrame {
 
     public String turno(String jugador) {
         if (turno == true) {
-            jugadorActual = Inicio.devolverJugador1();
+            jugadorActual = Jugadores.devolverJugador1();
         } else if (turno == false) {
-            jugadorActual = Inicio.devolverJugador2();
+            jugadorActual = Jugadores.devolverJugador2();
         }
         return jugadorActual;
     }

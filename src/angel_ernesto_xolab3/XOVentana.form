@@ -202,7 +202,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="Inicio.devolverJugador1()+&quot; vs &quot;+Inicio.devolverJugador2()" type="code"/>
+          <Connection code="Jugadores.devolverJugador1()+&quot; vs &quot;+Jugadores.devolverJugador2()" type="code"/>
         </Property>
       </Properties>
     </Component>
